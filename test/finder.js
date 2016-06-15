@@ -19,3 +19,12 @@ test( 'FINDER: finds strings that start with a', t => {
     t.deepEqual( result, [ 'ant', 'allegory' ], 'result is correct' );
     t.end();
 } );
+
+test( 'DEEPFINDER: returns empty array if input is empty', t => {
+    const input = [];
+    const result = fpt.deepFinder( input, value => /^a/i.test( value ) );
+
+    t.ok( result, 'generated a result' );
+    t.deepEqual( result, [], 'result is correct' );
+    t.end();
+} );
